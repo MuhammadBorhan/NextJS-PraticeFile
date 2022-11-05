@@ -1,9 +1,9 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 const SindleProduct = () => {
   const [post, setPost] = useState({});
-  console.log(post);
   const router = useRouter();
   const { productId } = router.query;
   console.log(productId);
@@ -15,7 +15,19 @@ const SindleProduct = () => {
   }, []);
   return (
     <div style={{ padding: "0 20px", lineHeight: "12px" }}>
-      <h1>id: {post.id}</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          marginBottom: "20px",
+          borderBottom: "2px dotted",
+          paddingBottom: "20px",
+        }}
+      >
+        Product Details Page
+      </h1>
+      <Link href={`/products/${post.id}/review/${post.id}`}>
+        <h1>id: {post.id}</h1>
+      </Link>
       <h2>Title: {post.title}</h2>
       <p>Body: {post.body}</p>
     </div>
