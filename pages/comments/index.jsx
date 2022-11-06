@@ -19,6 +19,14 @@ export default function comments() {
     const data = await res.json();
     handleComments();
   };
+
+  const handleDelete = async (commentId) => {
+    const res = await fetch(`/api/comment/${commentId}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    handleComments();
+  };
   return (
     <div>
       <button onClick={handleComments}>Load Comments {comments.length}</button>
@@ -36,6 +44,7 @@ export default function comments() {
               <h1>
                 {comment.id}. {comment.comment}
               </h1>
+              <button onClick={() => handleDelete(comment.id)}>Delete</button>
             </div>
           );
         })}
