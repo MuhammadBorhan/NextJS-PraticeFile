@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Index = () => {
-  document.title = "NextJS FirstProject";
+  // document.title = "NextJS FirstProject";
   return (
     <div>
       <div
