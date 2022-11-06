@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Product 1",
-      "price": 700,
+      "price": 1000,
       "description": "Description 1"
     },
     {
@@ -19,6 +19,7 @@
       "description": "Description 3"
     }
   ],
+
   "news": [
     {
       "id": 1,
@@ -39,12 +40,14 @@
       "category": "sports"
     }
   ],
+
   "dashboard": {
     "posts": 5,
     "likes": 100,
     "followers": 20,
     "following": 50
   },
+
   "events": [
     {
       "id": 1,
