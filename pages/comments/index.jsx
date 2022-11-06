@@ -9,6 +9,16 @@ export default function comments() {
     const data = await res.json();
     setComments(data);
   };
+
+  const handleSubmit = async (e) => {
+    const res = await fetch("/api", {
+      method: "POST",
+      body: JSON.stringify({ comment }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    handleComments();
+  };
   return (
     <div>
       <button onClick={handleComments}>Load Comments {comments.length}</button>
@@ -18,7 +28,7 @@ export default function comments() {
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       />
-      <input type="submit" value="Add" />
+      <input onClick={handleSubmit} type="submit" value="Add" />
       <div>
         {comments.map((comment) => {
           return (
