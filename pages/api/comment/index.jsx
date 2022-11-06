@@ -1,4 +1,6 @@
-import { comments } from "../../data/coments";
+// import { comments } from "../../data/coments";
+
+import { comments } from "../../../data/coments";
 
 export default function handler(req, res) {
   if (req.method === "GET") {

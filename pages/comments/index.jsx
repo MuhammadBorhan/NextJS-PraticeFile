@@ -5,13 +5,13 @@ export default function comments() {
   const [comment, setComment] = useState("");
 
   const handleComments = async () => {
-    const res = await fetch("/api");
+    const res = await fetch("/api/comment");
     const data = await res.json();
     setComments(data);
   };
 
   const handleSubmit = async (e) => {
-    const res = await fetch("/api", {
+    const res = await fetch("/api/comment", {
       method: "POST",
       body: JSON.stringify({ comment }),
       headers: { "Content-Type": "application/json" },
